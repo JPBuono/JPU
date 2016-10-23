@@ -12,18 +12,26 @@
     tools:context="jpu.gruppo10.sms16.ivu.di.uniba.it.jputente.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/textView2" />
-
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp" />
+        android:text="Load First Fragment"
+        android:id="@+id/btn"
+        android:layout_centerHorizontal="true"/>
+
+    <!-- Fragment Container -->
+
+    <RelativeLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="#004d4d"
+
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"/>
+
+
+
+
+
 </RelativeLayout>

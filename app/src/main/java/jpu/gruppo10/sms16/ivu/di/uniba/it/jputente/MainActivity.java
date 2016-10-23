@@ -1,8 +1,10 @@
 package jpu.gruppo10.sms16.ivu.di.uniba.it.jputente;
 
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,14 +14,37 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+
+import jpu.gruppo10.sms16.ivu.di.uniba.it.jputente.Fragment.ContentFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    Button btn;
+    boolean status=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        Button btn = (Button) findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                android.app.FragmentManager fragmentManager = getFragmentManager();
+                android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                if(!status){
+                    ContentFragment frag = new ContentFragment();
+                    fragmentTransaction.add(R.id.fragment_container, frag);
+                    fragmentTransaction.commit();
+                }
+            }
+        });
+
 
         //Inizializza la toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
