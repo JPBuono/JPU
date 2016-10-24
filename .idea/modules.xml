@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JPutente.iml" filepath="$PROJECT_DIR$/JPutente.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JPU.iml" filepath="$PROJECT_DIR$/JPU.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

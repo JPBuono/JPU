@@ -18,6 +18,7 @@ import android.widget.Button;
 
 import jpu.gruppo10.sms16.ivu.di.uniba.it.jputente.Fragment.ContentFragment;
 
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -30,7 +31,29 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
 
-        Button btn = (Button) findViewById(R.id.btn);
+      /*   Button btn = (Button) findViewById(R.id.btn);
+        assert btn != null;
+        assert btn != null;
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+        PizzerieListFragment pizzerieFragment = (PizzerieListFragment)getSupportFragmentManager().findFragmentByTag("pizzerieFragment");
+        if(pizzerieFragment==null){
+            pizzerieFragment=new PizzerieListFragment();
+            android.support.v4.app.FragmentTransaction transact=getSupportFragmentManager().beginTransaction();
+            transact.add(android.R.id.content,pizzerieFragment,"lstfragment");
+            transact.commit();
+
+       }
+         }
+        });*/
+
+
+
+
+
+
+       /*Button btn = (Button) findViewById(R.id.btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,8 +66,7 @@ public class MainActivity extends AppCompatActivity
                     fragmentTransaction.commit();
                 }
             }
-        });
-
+        });*/
 
         //Inizializza la toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -73,6 +95,24 @@ public class MainActivity extends AppCompatActivity
         //Inizializziamo la NavigationView
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        Button btn = (Button) findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                android.app.FragmentManager fragmentManager = getFragmentManager();
+                android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                if(!status){
+                    ContentFragment frag = new ContentFragment();
+                    // prendiamo l'oggetto frag di tipo Content manager e lo inseriamo all'interno del fragment_container
+                    // dichiarato nel content main
+                    fragmentTransaction.add(R.id.fragment_container, frag);
+                    fragmentTransaction.commit();
+                }
+            }
+        });
 
     }//Fine ONCREATE
 
